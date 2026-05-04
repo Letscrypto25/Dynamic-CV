@@ -1,22 +1,35 @@
 
-// Simple Cart Logic (fake cart for demo)
+// Dynamic CV Portfolio Functionality
 document.addEventListener("DOMContentLoaded", () => {
-  const prices = document.querySelectorAll(".price");
-  prices.forEach(p => {
-    let value = parseFloat(p.textContent.replace(/[^0-9.]/g, ''));
-    if (!isNaN(value)) {
-      p.textContent = `R${value.toFixed(2)}`;
+  // Highlight active navigation link
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const navLinks = document.querySelectorAll("nav a");
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    const href = link.getAttribute("href").split("/").pop() || "index.html";
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+      link.classList.add("active");
     }
   });
 
-  const cartButtons = document.querySelectorAll(".add-to-cart");
-  let cart = [];
-
-  cartButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const item = button.dataset.item || "Item";
-      cart.push(item);
-      alert(item + " added to cart! Total items: " + cart.length);
+  // Smooth scroll behavior for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     });
   });
+
+  // Handle form submission (if contact form exists)
+  const contactForm = document.querySelector("form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Thank you for your message! We'll get back to you soon.");
+      contactForm.reset();
+    });
+  }
 });

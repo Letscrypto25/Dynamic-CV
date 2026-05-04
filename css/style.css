@@ -84,11 +84,27 @@ section h2 {
 	display: inline-block;
 }
 
+section h3 {
+	font-size: 1.3rem;
+	margin-bottom: 0.8rem;
+	color: #333;
+}
+
 section p {
 	font-size: 1rem;
 	color: rgb(107, 114, 128);
 	margin-bottom: 1rem;
 	line-height: 1.8;
+}
+
+section a {
+	color: #667eea;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+section a:hover {
+	text-decoration: underline;
 }
 
 .card {
@@ -109,6 +125,45 @@ section p {
 
 .card p:last-child {
 	margin-bottom: 0;
+}
+
+.form-group {
+	margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+	width: 100%;
+	padding: 0.75rem;
+	border: 1px solid #d1d5db;
+	border-radius: 8px;
+	font-family: inherit;
+	font-size: 1rem;
+	transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+	outline: none;
+	border-color: #667eea;
+	box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-submit {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	color: white;
+	padding: 0.75rem 2rem;
+	border: none;
+	border-radius: 8px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 15px rgba(102, 126, 234, 0.3);
 }
 
 footer {
@@ -134,4 +189,128 @@ h2 {
 
 p {
 	margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	header {
+		padding: 2rem 1rem;
+	}
+
+	header h1 {
+		font-size: 2rem;
+	}
+
+	header p {
+		font-size: 0.95rem;
+	}
+
+	nav ul {
+		flex-direction: column;
+	}
+
+	nav a {
+		padding: 0.75rem 1.5rem;
+		border-bottom: none;
+		border-left: 3px solid transparent;
+	}
+
+	nav a:hover,
+	nav a.active {
+		border-bottom: none;
+		border-left-color: #667eea;
+	}
+
+	section {
+		padding: 0 1rem;
+	}
+
+	section h2 {
+		font-size: 1.5rem;
+	}
+
+	section h3 {
+		font-size: 1.1rem;
+	}
+
+	section p {
+		font-size: 0.95rem;
+	}
+
+	.card {
+		margin: 1.5rem auto;
+		padding: 1.5rem;
+	}
+
+	.form-group input,
+	.form-group textarea {
+		padding: 0.6rem;
+	}
+
+	.btn-submit {
+		padding: 0.6rem 1.5rem;
+		font-size: 0.95rem;
+	}
+}
+
+@media (max-width: 480px) {
+	header {
+		padding: 1.5rem 1rem;
+	}
+
+	header h1 {
+		font-size: 1.5rem;
+	}
+
+	header p {
+		font-size: 0.85rem;
+	}
+
+	nav a {
+		padding: 0.6rem 1rem;
+		font-size: 0.9rem;
+	}
+
+	section {
+		padding: 0 0.75rem;
+		margin: 1.5rem auto;
+	}
+
+	section h2 {
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+	}
+
+	section h3 {
+		font-size: 1rem;
+	}
+
+	section p {
+		font-size: 0.9rem;
+	}
+
+	.card {
+		margin: 1rem auto;
+		padding: 1rem;
+	}
+
+	.form-group {
+		margin-bottom: 1rem;
+	}
+
+	.form-group input,
+	.form-group textarea {
+		padding: 0.5rem;
+		font-size: 0.95rem;
+	}
+
+	.btn-submit {
+		padding: 0.5rem 1.25rem;
+		font-size: 0.9rem;
+		width: 100%;
+	}
+
+	footer {
+		padding: 1.5rem 1rem;
+	}
 }
